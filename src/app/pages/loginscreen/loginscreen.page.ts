@@ -46,6 +46,8 @@ export class LoginscreenPage implements OnInit {
 
   }
 
+ 
+
 LoginUser(value){
   console.log("Am logged in");
   try{
