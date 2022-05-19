@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-feeds',
@@ -6,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feeds.page.scss'],
 })
 export class FeedsPage implements OnInit {
-
-  constructor() { }
+  galleryType = 'regular';
+  constructor(public navCtrl:NavController) { }
 
   ngOnInit() {
   }
