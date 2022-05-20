@@ -1,7 +1,6 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      feed
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -18,7 +17,7 @@
  
   <div [ngSwitch]="galleryType">
     <!-- Responsive Layout with Ion Grid-->
-    <!-- More Pinterest floating gallery style -->
+     <!-- More Pinterest floating gallery style -->
 <div class="images" *ngSwitchCase="'pinterest'">
   <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10,11]">
     <img src="assets/imgs/{{image}}.jpg">
@@ -31,3 +30,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    </div>
+    </ion-content>
