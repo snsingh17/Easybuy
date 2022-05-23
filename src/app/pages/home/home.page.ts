@@ -8,10 +8,15 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  nav: any;
 
   constructor(private barcodeScanner: BarcodeScanner) { }
 
   ngOnInit() {
+  }
+
+  searchp(){
+    this.nav.navigateForward(['searchproduct']);
   }
 
   scan(){
