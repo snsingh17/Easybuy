@@ -46,6 +46,10 @@ export class LoginscreenPage implements OnInit {
 
   }
 
+  goTosignup(){
+    this.nav.navigateForward(['signup']);
+  }
+
  
 
 LoginUser(value){
@@ -53,7 +57,7 @@ LoginUser(value){
   try{
      this.authservice.loginFireauth(value).then( resp =>{
        console.log(resp);
-    //  this.router.navigate(['tabs'])
+     this.router.navigate(['tabs'])
  
      if(resp.user){
 

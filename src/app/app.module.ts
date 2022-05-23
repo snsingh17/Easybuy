@@ -11,7 +11,7 @@ import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {firebaseConfig} from '../environments/environment';
+import {environment} from 'src/environments/environment'
 import { Facebook } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
@@ -27,7 +27,7 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
       AppRoutingModule,
       ReactiveFormsModule,
       FormsModule,
-     AngularFireModule.initializeApp(firebaseConfig),
+     AngularFireModule.initializeApp(environment.firebase),
      AngularFireAuthModule,
      AngularFirestoreModule
 

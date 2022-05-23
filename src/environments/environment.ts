@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
 
-
-firebase: {
+firebase : {
   apiKey: "AIzaSyDgQs7oU7fl8UzmkF-aHhkXFSLdi-3m9zw",
   authDomain: "easybuy2305-c5c57.firebaseapp.com",
   projectId: "easybuy2305-c5c57",
@@ -15,6 +14,7 @@ firebase: {
   appId: "1:122500382918:web:eaea8b04b79515f54717c7"
 }
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

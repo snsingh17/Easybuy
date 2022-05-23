@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import * as firebase from 'firebase/app';
 import {AngularFireAuth} from '@angular/fire/auth'
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { AngularFirestore } from '@angular/fire/firestore';
 // import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 export  interface UserPro{
@@ -16,7 +17,7 @@ export class AuthService {
 
   private user : UserPro;
 
-  constructor(public auth: AngularFireAuth, private googleplus: GooglePlus) { }
+  constructor(public auth: AngularFireAuth, public firestore: AngularFirestore, private googleplus:GooglePlus ) { }
 
 
   loginFireauth(value){
@@ -50,10 +51,12 @@ export class AuthService {
 
   GoogleloginAuth(){
     return this.googleplus.login({
-      'scopes':'profile email',
-                     
-      'webClientId':'206201421419-u1mp61vt8faleo46c8n4lm3hadsam9i7.apps.googleusercontent.com',
+      'scopes':'profile email','webClientId':'206201421419-u1mp61vt8faleo46c8n4lm3hadsam9i7.apps.googleusercontent.com',
       'offline':true
     });
-  }
+
+  
+
+ 
+}
 }
