@@ -3,16 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
+  production: false,
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyC9VAR2JL8eYR8De4tbZ-MXoFnttdeGlVA",
-  authDomain: "easybuy-4ed6f.firebaseapp.com",
-  projectId: "easybuy-4ed6f",
-  storageBucket: "easybuy-4ed6f.appspot.com",
-  messagingSenderId: "412995814264",
-  appId: "1:412995814264:web:0cd52ad3a5a19a36aefe8d"
+
+firebase: {
+  apiKey: "AIzaSyDgQs7oU7fl8UzmkF-aHhkXFSLdi-3m9zw",
+  authDomain: "easybuy2305-c5c57.firebaseapp.com",
+  projectId: "easybuy2305-c5c57",
+  storageBucket: "easybuy2305-c5c57.appspot.com",
+  messagingSenderId: "122500382918",
+  appId: "1:122500382918:web:eaea8b04b79515f54717c7"
+}
 };
 
 /*

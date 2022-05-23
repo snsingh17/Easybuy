@@ -16,6 +16,7 @@ import { Facebook } from '@ionic-native/facebook/ngx';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { LottieSplashScreen } from '@ionic-native/lottie-splash-screen/ngx';
 import { AppPreferences } from '@ionic-native/app-preferences/ngx';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { AppPreferences } from '@ionic-native/app-preferences/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Facebook,
     GooglePlus ,
-    AppPreferences
+    AppPreferences, BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })
