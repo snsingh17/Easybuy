@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addproduct</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Product Name</ion-label>
+    <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Price</ion-label>
+    <ion-input type="number" [(ngModel)]="product.price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Quantity</ion-label>
+    <ion-input type="number" [(ngModel)]="product.quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Row</ion-label>
+    <ion-input type="number" [(ngModel)]="product.row"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Shelf</ion-label>
+    <ion-input type="number" [(ngModel)]="product.shelf"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Discount</ion-label>
+    <ion-input type="number" [(ngModel)]="product.discount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Available</ion-label>
+    <ion-input type="number" [(ngModel)]="product.avilable"></ion-input>
+  </ion-item>
+<ion-button expand="block" (click)="saveproduct()">Save product</ion-button>
+<ion-button expand="block" color="danger" (click)="deleteproduct()"  *ngIf="productId !=='new'">delete product</ion-button>
+
+</ion-content>

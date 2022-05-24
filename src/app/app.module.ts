@@ -39,7 +39,8 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     Facebook,
     GooglePlus ,
-    AppPreferences, BarcodeScanner
+    AppPreferences,
+    BarcodeScanner
   ],
   bootstrap: [AppComponent]
 })

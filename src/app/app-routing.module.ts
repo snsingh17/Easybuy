@@ -34,16 +34,15 @@ const routes: Routes = [
     path: 'tabs',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
     canActivate: [AuthGuard]
-  },  {
+  },
+  {
     path: 'searchproduct',
     loadChildren: () => import('./pages/searchproduct/searchproduct.module').then( m => m.SearchproductPageModule)
   },
-
-  
-
-  
-
-
+  {
+    path: 'addproduct/:productId',
+    loadChildren: () => import('./pages/addproduct/addproduct.module').then( m => m.AddproductPageModule)
+  },
 
 ];
 

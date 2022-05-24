@@ -1,9 +1,30 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>searchproduct</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let product of products" routerLink="/addproduct/{{product.productId}}">
+      <label>
+       <h1>ITEM: {{product.name}}</h1>
+       <p>Price <strong>{{product.price}}</strong></p>
+       <p>Quantity <strong>{{product.quantity}}</strong></p>
+       <p>Row <strong>{{product.row}}</strong></p>
+       <p>Shelf <strong>{{product.shelf}}</strong></p>
+       <p>Available <strong>{{product.avilable}}</strong></p>
+       <p>Discount <strong>{{product.discount}}</strong></p>
+       
+      </label>
+  </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button routerLink="/addproduct/new">
+    <ion-icon name="add"></ion-icon>
+
+  </ion-fab-button>
+  </ion-fab>
 
 </ion-content>

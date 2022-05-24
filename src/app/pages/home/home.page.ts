@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
-
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +9,12 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-  nav: any;
 
-  constructor(private barcodeScanner: BarcodeScanner) { }
+  constructor(private barcodeScanner: BarcodeScanner, private nav: NavController, private router: Router) { }
 
-  ngOnInit() {
-  }
+ 
 
-  searchp(){
+  searchpro(){
     this.nav.navigateForward(['searchproduct']);
   }
 
@@ -25,6 +24,8 @@ export class HomePage implements OnInit {
      }).catch(err => {
          console.log('Error', err);
      });
+  }
+  ngOnInit() {
   }
   
 
