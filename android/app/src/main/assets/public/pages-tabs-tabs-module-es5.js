@@ -98,9 +98,9 @@
         }, {
           path: "profile",
           loadChildren: function loadChildren() {
-            return __webpack_require__.e(
+            return Promise.all(
             /*! import() | src-app-pages-profile-profile-module */
-            "src-app-pages-profile-profile-module").then(__webpack_require__.bind(null,
+            [__webpack_require__.e("common"), __webpack_require__.e("src-app-pages-profile-profile-module")]).then(__webpack_require__.bind(null,
             /*! src/app/pages/profile/profile.module */
             "./src/app/pages/profile/profile.module.ts")).then(function (res) {
               return res.ProfilePageModule;

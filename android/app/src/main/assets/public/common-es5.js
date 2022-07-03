@@ -1,4 +1,10 @@
 (function () {
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -655,6 +661,137 @@
       }();
       /***/
 
+    },
+
+    /***/
+    "./src/app/services/auth.service.ts":
+    /*!******************************************!*\
+      !*** ./src/app/services/auth.service.ts ***!
+      \******************************************/
+
+    /*! exports provided: AuthService */
+
+    /***/
+    function srcAppServicesAuthServiceTs(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "AuthService", function () {
+        return AuthService;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "./node_modules/tslib/tslib.es6.js");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+      /* harmony import */
+
+
+      var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! firebase/app */
+      "./node_modules/firebase/app/dist/index.cjs.js");
+      /* harmony import */
+
+
+      var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
+      /* harmony import */
+
+
+      var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/fire/auth */
+      "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
+      /* harmony import */
+
+
+      var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic-native/google-plus/ngx */
+      "./node_modules/@ionic-native/google-plus/__ivy_ngcc__/ngx/index.js");
+      /* harmony import */
+
+
+      var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/fire/firestore */
+      "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-firestore.js");
+
+      var AuthService = /*#__PURE__*/function () {
+        function AuthService(auth, firestore, googleplus) {
+          _classCallCheck(this, AuthService);
+
+          this.auth = auth;
+          this.firestore = firestore;
+          this.googleplus = googleplus;
+        }
+
+        _createClass(AuthService, [{
+          key: "loginFireauth",
+          value: function loginFireauth(value) {
+            return new Promise(function (resolve, reject) {
+              firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithEmailAndPassword(value.email, value.password).then(function (res) {
+                return resolve(res);
+              }, function (error) {
+                return reject(error);
+              });
+            });
+          }
+        }, {
+          key: "setUser",
+          value: function setUser(user) {
+            return this.user = user;
+          }
+        }, {
+          key: "getUID",
+          value: function getUID() {
+            return this.user.uid;
+          }
+        }, {
+          key: "userRegistration",
+          value: function userRegistration(value) {
+            return new Promise(function (resolve, reject) {
+              firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password).then(function (res) {
+                return resolve(res);
+              }, function (error) {
+                return reject(error);
+              });
+            });
+          }
+        }, {
+          key: "GoogleloginAuth",
+          value: function GoogleloginAuth() {
+            return this.googleplus.login({
+              'scopes': 'profile email',
+              'webClientId': '206201421419-u1mp61vt8faleo46c8n4lm3hadsam9i7.apps.googleusercontent.com',
+              'offline': true
+            });
+          }
+        }]);
+
+        return AuthService;
+      }();
+
+      AuthService.ctorParameters = function () {
+        return [{
+          type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"]
+        }, {
+          type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_5__["AngularFirestore"]
+        }, {
+          type: _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_4__["GooglePlus"]
+        }];
+      };
+
+      AuthService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+      })], AuthService);
+      /***/
     }
   }]);
 })();

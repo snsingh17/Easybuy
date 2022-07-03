@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+     QR Scanner 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="half" (click)="startScan()">
+    <ion-icon slot="start" name="qr-scanner"></ion-icon>
+    Start scan
+  </ion-button> 
+  <ion-button expand="full" (click)="reset()" color="warning" *ngIf="scanResult">
+    <ion-icon slot="start" name="refesh">
+    </ion-icon>
+    Reset
+  </ion-button>
+   <video #video [hidden]="!scanActive" width="100%"></video>
+   <canvas #canvas hidden></canvas>
+
+
+   <ion-button expand="full" (click)="stopScan()" color="danger" *ngIf="scanActive">
+    <ion-icon slot="start" name="close"></ion-icon>
+    Stop scan
+   </ion-button>
+   <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-content>
+        {{scanResult}}
+      </ion-card-content>
+    </ion-card-header>
+   </ion-card>
+</ion-content>

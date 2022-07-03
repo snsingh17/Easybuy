@@ -201,7 +201,7 @@
         loadChildren: function loadChildren() {
           return Promise.all(
           /*! import() | pages-login-login-module */
-          [__webpack_require__.e("default~firebase-auth~pages-login-login-module"), __webpack_require__.e("default~pages-login-login-module~pages-uploadimage-uploadimage-module"), __webpack_require__.e("pages-login-login-module")]).then(__webpack_require__.bind(null,
+          [__webpack_require__.e("default~firebase-auth~pages-login-login-module"), __webpack_require__.e("common"), __webpack_require__.e("pages-login-login-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/login/login.module */
           "./src/app/pages/login/login.module.ts")).then(function (m) {
             return m.LoginPageModule;
@@ -221,9 +221,9 @@
       }, {
         path: 'loginscreen',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-loginscreen-loginscreen-module */
-          "pages-loginscreen-loginscreen-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-loginscreen-loginscreen-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/loginscreen/loginscreen.module */
           "./src/app/pages/loginscreen/loginscreen.module.ts")).then(function (m) {
             return m.LoginscreenPageModule;
@@ -232,9 +232,9 @@
       }, {
         path: 'signup',
         loadChildren: function loadChildren() {
-          return __webpack_require__.e(
+          return Promise.all(
           /*! import() | pages-signup-signup-module */
-          "pages-signup-signup-module").then(__webpack_require__.bind(null,
+          [__webpack_require__.e("common"), __webpack_require__.e("pages-signup-signup-module")]).then(__webpack_require__.bind(null,
           /*! ./pages/signup/signup.module */
           "./src/app/pages/signup/signup.module.ts")).then(function (m) {
             return m.SignupPageModule;
@@ -253,14 +253,25 @@
         },
         canActivate: [src_app_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]]
       }, {
-        path: 'uploadimage',
+        path: 'searchproduct',
         loadChildren: function loadChildren() {
-          return Promise.all(
-          /*! import() | pages-uploadimage-uploadimage-module */
-          [__webpack_require__.e("default~pages-login-login-module~pages-uploadimage-uploadimage-module"), __webpack_require__.e("pages-uploadimage-uploadimage-module")]).then(__webpack_require__.bind(null,
-          /*! ./pages/uploadimage/uploadimage.module */
-          "./src/app/pages/uploadimage/uploadimage.module.ts")).then(function (m) {
-            return m.UploadimagePageModule;
+          return __webpack_require__.e(
+          /*! import() | pages-searchproduct-searchproduct-module */
+          "pages-searchproduct-searchproduct-module").then(__webpack_require__.bind(null,
+          /*! ./pages/searchproduct/searchproduct.module */
+          "./src/app/pages/searchproduct/searchproduct.module.ts")).then(function (m) {
+            return m.SearchproductPageModule;
+          });
+        }
+      }, {
+        path: 'addproduct/:productId',
+        loadChildren: function loadChildren() {
+          return __webpack_require__.e(
+          /*! import() | pages-addproduct-addproduct-module */
+          "pages-addproduct-addproduct-module").then(__webpack_require__.bind(null,
+          /*! ./pages/addproduct/addproduct.module */
+          "./src/app/pages/addproduct/addproduct.module.ts")).then(function (m) {
+            return m.AddproductPageModule;
           });
         }
       }];
@@ -493,8 +504,8 @@
       /* harmony import */
 
 
-      var _environments_environment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
-      /*! ../environments/environment */
+      var src_environments_environment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+      /*! src/environments/environment */
       "./src/environments/environment.ts");
       /* harmony import */
 
@@ -534,7 +545,7 @@
       AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
         entryComponents: [],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_12__["firebaseConfig"]), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuthModule"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_2__["BrowserModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"].forRoot(), _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["ReactiveFormsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_8__["FormsModule"], _angular_fire__WEBPACK_IMPORTED_MODULE_10__["AngularFireModule"].initializeApp(src_environments_environment__WEBPACK_IMPORTED_MODULE_12__["environment"].firebase), _angular_fire_auth__WEBPACK_IMPORTED_MODULE_9__["AngularFireAuthModule"], _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_11__["AngularFirestoreModule"]],
         providers: [_ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"], _ionic_native_lottie_splash_screen_ngx__WEBPACK_IMPORTED_MODULE_15__["LottieSplashScreen"], {
           provide: _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouteReuseStrategy"],
           useClass: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicRouteStrategy"]
@@ -639,7 +650,7 @@
       !*** ./src/environments/environment.ts ***!
       \*****************************************/
 
-    /*! exports provided: environment, firebaseConfig */
+    /*! exports provided: environment */
 
     /***/
     function srcEnvironmentsEnvironmentTs(module, __webpack_exports__, __webpack_require__) {
@@ -651,27 +662,21 @@
 
       __webpack_require__.d(__webpack_exports__, "environment", function () {
         return environment;
-      });
-      /* harmony export (binding) */
-
-
-      __webpack_require__.d(__webpack_exports__, "firebaseConfig", function () {
-        return firebaseConfig;
       }); // This file can be replaced during build by using the `fileReplacements` array.
       // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
       // The list of file replacements can be found in `angular.json`.
 
 
       var environment = {
-        production: false
-      };
-      var firebaseConfig = {
-        apiKey: "AIzaSyC9VAR2JL8eYR8De4tbZ-MXoFnttdeGlVA",
-        authDomain: "easybuy-4ed6f.firebaseapp.com",
-        projectId: "easybuy-4ed6f",
-        storageBucket: "easybuy-4ed6f.appspot.com",
-        messagingSenderId: "412995814264",
-        appId: "1:412995814264:web:0cd52ad3a5a19a36aefe8d"
+        production: false,
+        firebase: {
+          apiKey: "AIzaSyDgQs7oU7fl8UzmkF-aHhkXFSLdi-3m9zw",
+          authDomain: "easybuy2305-c5c57.firebaseapp.com",
+          projectId: "easybuy2305-c5c57",
+          storageBucket: "easybuy2305-c5c57.appspot.com",
+          messagingSenderId: "122500382918",
+          appId: "1:122500382918:web:eaea8b04b79515f54717c7"
+        }
       };
       /*
        * For easier debugging in development mode, you can import the following file

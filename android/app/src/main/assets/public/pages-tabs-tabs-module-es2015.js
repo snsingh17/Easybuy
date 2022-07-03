@@ -38,7 +38,7 @@ const routes = [
         children: [
             { path: "home", loadChildren: () => __webpack_require__.e(/*! import() | src-app-pages-home-home-module */ "src-app-pages-home-home-module").then(__webpack_require__.bind(null, /*! src/app/pages/home/home.module */ "./src/app/pages/home/home.module.ts")).then(res => res.HomePageModule) },
             { path: "feeds", loadChildren: () => __webpack_require__.e(/*! import() | src-app-pages-feeds-feeds-module */ "src-app-pages-feeds-feeds-module").then(__webpack_require__.bind(null, /*! src/app/pages/feeds/feeds.module */ "./src/app/pages/feeds/feeds.module.ts")).then(res => res.FeedsPageModule) },
-            { path: "profile", loadChildren: () => __webpack_require__.e(/*! import() | src-app-pages-profile-profile-module */ "src-app-pages-profile-profile-module").then(__webpack_require__.bind(null, /*! src/app/pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(res => res.ProfilePageModule) }
+            { path: "profile", loadChildren: () => Promise.all(/*! import() | src-app-pages-profile-profile-module */[__webpack_require__.e("common"), __webpack_require__.e("src-app-pages-profile-profile-module")]).then(__webpack_require__.bind(null, /*! src/app/pages/profile/profile.module */ "./src/app/pages/profile/profile.module.ts")).then(res => res.ProfilePageModule) }
         ]
     },
     {

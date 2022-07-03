@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'addproduct/:productId',
     loadChildren: () => import('./pages/addproduct/addproduct.module').then( m => m.AddproductPageModule)
   },
+  {
+    path: 'scan',
+    loadChildren: () => import('./pages/scan/home.module').then( m => m.HomePageModule)
+  },
 
 ];
 

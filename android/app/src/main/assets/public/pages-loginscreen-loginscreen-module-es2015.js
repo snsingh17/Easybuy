@@ -161,12 +161,15 @@ let LoginscreenPage = class LoginscreenPage {
             ]))
         });
     }
+    goTosignup() {
+        this.nav.navigateForward(['signup']);
+    }
     LoginUser(value) {
         console.log("Am logged in");
         try {
             this.authservice.loginFireauth(value).then(resp => {
                 console.log(resp);
-                //  this.router.navigate(['tabs'])
+                this.router.navigate(['tabs']);
                 if (resp.user) {
                     this.authservice.setUser({
                         username: resp.user.displayName,
@@ -207,70 +210,6 @@ LoginscreenPage = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./loginscreen.page.scss */ "./src/app/pages/loginscreen/loginscreen.page.scss")).default]
     })
 ], LoginscreenPage);
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/auth.service.ts":
-/*!******************************************!*\
-  !*** ./src/app/services/auth.service.ts ***!
-  \******************************************/
-/*! exports provided: AuthService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/app */ "./node_modules/firebase/app/dist/index.cjs.js");
-/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm2015/angular-fire-auth.js");
-/* harmony import */ var _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/google-plus/ngx */ "./node_modules/@ionic-native/google-plus/__ivy_ngcc__/ngx/index.js");
-
-
-
-
-
-let AuthService = class AuthService {
-    constructor(auth, googleplus) {
-        this.auth = auth;
-        this.googleplus = googleplus;
-    }
-    loginFireauth(value) {
-        return new Promise((resolve, reject) => {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().signInWithEmailAndPassword(value.email, value.password).then(res => resolve(res), error => reject(error));
-        });
-    }
-    setUser(user) {
-        return this.user = user;
-    }
-    getUID() {
-        return this.user.uid;
-    }
-    userRegistration(value) {
-        return new Promise((resolve, reject) => {
-            firebase_app__WEBPACK_IMPORTED_MODULE_2__["auth"]().createUserWithEmailAndPassword(value.email, value.password).then(res => resolve(res), error => reject(error));
-        });
-    }
-    GoogleloginAuth() {
-        return this.googleplus.login({
-            'scopes': 'profile email',
-            'webClientId': '206201421419-u1mp61vt8faleo46c8n4lm3hadsam9i7.apps.googleusercontent.com',
-            'offline': true
-        });
-    }
-};
-AuthService.ctorParameters = () => [
-    { type: _angular_fire_auth__WEBPACK_IMPORTED_MODULE_3__["AngularFireAuth"] },
-    { type: _ionic_native_google_plus_ngx__WEBPACK_IMPORTED_MODULE_4__["GooglePlus"] }
-];
-AuthService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
-        providedIn: 'root'
-    })
-], AuthService);
 
 
 

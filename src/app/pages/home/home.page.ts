@@ -19,11 +19,13 @@ export class HomePage implements OnInit {
   }
 
   scan(){
-    this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
-     }).catch(err => {
-         console.log('Error', err);
-     });
+
+    this.nav.navigateForward(['scan']);
+    // this.barcodeScanner.scan().then(barcodeData => {
+    //   console.log('Barcode data', barcodeData);
+    //  }).catch(err => {
+    //      console.log('Error', err);
+    //  });
   }
   ngOnInit() {
   }

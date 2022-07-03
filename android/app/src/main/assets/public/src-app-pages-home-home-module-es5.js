@@ -22,7 +22,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>EasyBuy</ion-title>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col size=\"12\">\r\n        <ion-icon name=\"person\"></ion-icon>\r\n        <ion-text>\r\n          <h1>Welcome</h1>\r\n          </ion-text>\r\n      </ion-col>\r\n\r\n      <ion-col size=\"12\">\r\n        <ion-card color=\"success\">\r\n          <img src=\"../../../assets/imgs/plocation.jpg\" alt=\"couldn't load\">\r\n          <ion-text>\r\n            <h2>Search Products</h2>\r\n          </ion-text>\r\n\r\n          </ion-card>\r\n\r\n      </ion-col>\r\n      <ion-col size=\"12\">\r\n        <ion-card color=\"danger\" (click)=\"scan()\">\r\n          <img src=\"../../../assets/imgs/barcode.png\" alt=\"couldn't load\">\r\n          <ion-text>\r\n            <h2><align:center>Scan Barcode</align:center></h2>\r\n          </ion-text>\r\n\r\n          </ion-card>\r\n\r\n      </ion-col>\r\n    </ion-row>\r\n    </ion-grid>\r\n  </ion-content>\r\n\r\n";
+      __webpack_exports__["default"] = "<ion-header>\r\n  <ion-toolbar>\r\n    <ion-title>EasyBuy</ion-title>\r\n  </ion-toolbar>\r\n\r\n</ion-header>\r\n\r\n<ion-content>\r\n  <ion-grid>\r\n    <ion-row>\r\n      <ion-col size=\"12\">\r\n        <ion-icon name=\"person\"></ion-icon>\r\n        <ion-text>\r\n          <h1>Welcome</h1>\r\n          </ion-text>\r\n      </ion-col>\r\n\r\n      <ion-col size=\"12\">\r\n        <ion-card color=\"success\" (click)=\"searchpro()\">\r\n          <img src=\"../../../assets/imgs/plocation.jpg\" alt=\"couldn't load\">\r\n          <ion-text>\r\n            <h2>Search Products</h2>\r\n          </ion-text>\r\n\r\n          </ion-card>\r\n\r\n      </ion-col>\r\n      <ion-col size=\"12\">\r\n        <ion-card color=\"danger\" (click)=\"scan()\">\r\n          <img src=\"../../../assets/imgs/barcode.png\" alt=\"couldn't load\">\r\n          <ion-text>\r\n            <h2>Scan Barcode</h2>\r\n          </ion-text>\r\n\r\n          </ion-card>\r\n\r\n      </ion-col>\r\n    </ion-row>\r\n    </ion-grid>\r\n  </ion-content>\r\n\r\n";
       /***/
     },
 
@@ -216,17 +216,33 @@
       var _awesome_cordova_plugins_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @awesome-cordova-plugins/barcode-scanner/ngx */
       "./node_modules/@awesome-cordova-plugins/barcode-scanner/__ivy_ngcc__/ngx/index.js");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @ionic/angular */
+      "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @angular/router */
+      "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 
       var HomePage = /*#__PURE__*/function () {
-        function HomePage(barcodeScanner) {
+        function HomePage(barcodeScanner, nav, router) {
           _classCallCheck(this, HomePage);
 
           this.barcodeScanner = barcodeScanner;
+          this.nav = nav;
+          this.router = router;
         }
 
         _createClass(HomePage, [{
-          key: "ngOnInit",
-          value: function ngOnInit() {}
+          key: "searchpro",
+          value: function searchpro() {
+            this.nav.navigateForward(['searchproduct']);
+          }
         }, {
           key: "scan",
           value: function scan() {
@@ -236,6 +252,9 @@
               console.log('Error', err);
             });
           }
+        }, {
+          key: "ngOnInit",
+          value: function ngOnInit() {}
         }]);
 
         return HomePage;
@@ -244,6 +263,10 @@
       HomePage.ctorParameters = function () {
         return [{
           type: _awesome_cordova_plugins_barcode_scanner_ngx__WEBPACK_IMPORTED_MODULE_2__["BarcodeScanner"]
+        }, {
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["NavController"]
+        }, {
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
         }];
       };
 
